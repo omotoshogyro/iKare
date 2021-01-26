@@ -5,6 +5,7 @@
 }
 body {
   font-family: Arial, Helvetica, sans-serif;
+  overflow-y: hidden;
 }
 
 .home__container {
@@ -13,7 +14,7 @@ body {
   object-fit: contain;
   background-image: url(../images/hospice-care.png);
   background-repeat: no-repeat;
-  background-position: "center center";
+  background-position: center;
   background-size: cover;
   position: relative;
   display: flex;
@@ -31,7 +32,10 @@ body {
   justify-content: space-between;
   align-items: center;
 }
-.bg__image {
+.nav__bar .logo {
+  margin: 20px 0px 0px 20px;
+}
+.logo__image {
   width: 10vw;
   object-fit: contain;
   height: auto;
@@ -47,18 +51,47 @@ body {
   font-weight: 550;
   color: rgb(3, 38, 114);
 }
+.hamburger {
+  display: none;
+}
+.hamburger {
+  /* display: flex; */
+  margin: 20px;
+}
+.hamburger > .line {
+  width: 25px;
+  height: 2px;
+  margin-bottom: 5px;
+  background-color: rgb(3, 38, 114);
+}
 .centered__content {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
+  height: 90%;
+  padding: 0px 20px;
 }
 .black__circle {
   background-color: rgba(0, 0, 0, 0.267);
-  padding: 10% 0.2%;
+  background-image: linear-gradient(
+    to top right,
+    rgba(0, 0, 0, 1),
+    rgba(0, 0, 0, 0.4),
+    rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 0)
+  );
+  max-width: 340px;
+  max-height: 340px;
+  width: 100%;
+  height: 100%;
   border-radius: 100%;
   text-transform: uppercase;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 .black__circle h2 {
   font-size: 2.4em;
@@ -78,4 +111,28 @@ body {
 }
 .below__circle .contact {
   color: rgb(3, 38, 114);
+}
+@media (max-width: 400px) {
+  .black__circle {
+    width: 300px;
+    height: 300px;
+  }
+  .black__circle h2 {
+    font-size: 2em;
+  }
+  .black__circle p {
+    font-size: 10px;
+  }
+}
+
+@media screen and (max-width: 528px) {
+  .nav__menu {
+    display: none;
+  }
+  .hamburger {
+    display: block;
+  }
+  .logo__image {
+    width: 25vw;
+  }
 }
